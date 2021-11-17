@@ -27,11 +27,11 @@ def options_handler(path = None):
 
 @route('/<filename>')
 def server_static(filename):
-    return static_file(filename, root='./frontend')
+    return static_file(filename, root='./web')
 
 @route('/css/<filename>')
 def server_static(filename):
-    return static_file(filename, root='./frontend/css')
+    return static_file(filename, root='./web/css')
 
 # {"Dani": 12, "Angel": 40, "Luismi": 20, "Pablo": 10, "Mochuelo": 60, "Manuel": 35, "Pabol": 40, "Aceituno": 10, "Fernando": 40, "Milla": 12}
 
