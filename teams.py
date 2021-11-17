@@ -3,7 +3,7 @@
 # Author: Daniel Martinez
 # Description: API REST Framework Bottle. Tutorial Sencillo.
 
-from bottle import Bottle, route, run, request, HTTPResponse, response, hook
+from bottle import Bottle, route, run, request, HTTPResponse, response, hook, static_file
 import json
 
 
@@ -24,6 +24,14 @@ def enable_cors():
 def options_handler(path = None):
     return {}
 
+
+@route('/<filename>')
+def server_static(filename):
+    return static_file(filename, root='./frontend')
+
+@route('/css/<filename>')
+def server_static(filename):
+    return static_file(filename, root='./frontend/css')
 
 # {"Dani": 12, "Angel": 40, "Luismi": 20, "Pablo": 10, "Mochuelo": 60, "Manuel": 35, "Pabol": 40, "Aceituno": 10, "Fernando": 40, "Milla": 12}
 
