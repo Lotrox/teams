@@ -25,9 +25,9 @@ def options_handler(path = None):
     return {}
 
 
-@route('/<filename>')
-def server_static(filename):
-    return static_file(filename, root='./web')
+@route('/')
+def server_static():
+    return static_file('index.html', root='./web')
 
 @route('/css/<filename>')
 def server_static(filename):
@@ -102,7 +102,7 @@ def teams(nmax=3):
 
 
 
-run(host='0.0.0.0', port=8080, reloader=True)
+run(host='0.0.0.0', port=8080, reloader=False)
 
 
 
